@@ -1,0 +1,10 @@
+docs/
+test/
+.editorconfig
+.gitignore
+tsconfig.json
+jest.config.js
+webpack.config.js
+prettier.config.js
+tslint.json
+*.tgz
