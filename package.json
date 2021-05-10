@@ -18,7 +18,7 @@
     "test:watch": "npm run test:unit -- --watch",
     "test": "npm run test:unit",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
-    "prettier": "prettier --config prettier.config.js --write src/**/*.{ts,tsx}",
+    "prettier": "prettier --config prettier.config.js --write 'src/**/*.{ts,tsx}'",
     "start": "webpack serve",
     "build": "webpack ---mode production"
   },
