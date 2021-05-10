@@ -47,6 +47,7 @@
     "html-webpack-plugin": "^4.5.2",
     "jest": "^26.6.3",
     "jest-enzyme": "^7.1.2",
+    "piral-core": "^0.13.2",
     "prettier": "^2.2.1",
     "react": "^17.0.2",
     "react-ace": "^9.4.0",
