@@ -80,7 +80,7 @@ class EditorView extends React.Component<EditorViewProps, EditorViewState> {
           },
         }),
       )
-      .catch(err =>
+      .catch((err) =>
         this.setState({
           alert: {
             text: `Error saving file: ${err}.`,

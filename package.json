@@ -14,7 +14,7 @@
     "url": "https://github.com/FlorianRappl/kras-management-portal/issues"
   },
   "scripts": {
-    "test:unit": "cross-env NODE_ENV=test jest src",
+    "test:unit": "cross-env NODE_ENV=test jest src --passWithNoTests",
     "test:watch": "npm run test:unit -- --watch",
     "test": "npm run test:unit",
     "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
@@ -39,6 +39,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-jest": "^26.6.3",
     "bootstrap": "^4.6.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^3.6.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",

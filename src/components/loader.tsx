@@ -56,9 +56,7 @@ export class Loader<T> extends React.Component<LoaderProps<T>, LoaderState<T>> {
   componentWillMount() {
     this.mounted = true;
 
-    request(this.props)
-      .then(this.resolve)
-      .catch(this.revoke);
+    request(this.props).then(this.resolve).catch(this.revoke);
 
     this.setState({
       status: 'loading',

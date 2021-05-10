@@ -36,8 +36,8 @@ export class Login extends React.Component<LoginProps, LoginState> {
         password,
       }),
     }).then(
-      res => this.authorized(res.token),
-      err =>
+      (res) => this.authorized(res.token),
+      (err) =>
         this.setState({
           error: err,
           submit: false,

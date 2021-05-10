@@ -223,7 +223,7 @@ export class Injector extends React.Component<InjectorProps, InjectorState> {
               <Input
                 type="checkbox"
                 checked={option.value}
-                onChange={e => this.changeBooleanOption(e.target.checked, name)}
+                onChange={(e) => this.changeBooleanOption(e.target.checked, name)}
               />{' '}
               Enabled
             </Label>
@@ -231,11 +231,13 @@ export class Injector extends React.Component<InjectorProps, InjectorState> {
         );
         break;
       case 'text':
-        input = <Input type="text" value={option.value} onChange={e => this.changeTextOption(e.target.value, name)} />;
+        input = (
+          <Input type="text" value={option.value} onChange={(e) => this.changeTextOption(e.target.value, name)} />
+        );
         break;
       case 'json':
         input = (
-          <TextEditor mode="json" height="8em" value={option.value} onChange={e => this.changeTextOption(e, name)} />
+          <TextEditor mode="json" height="8em" value={option.value} onChange={(e) => this.changeTextOption(e, name)} />
         );
         break;
       case 'file':
@@ -265,7 +267,11 @@ export class Injector extends React.Component<InjectorProps, InjectorState> {
             {option.value.map((directory, i) => (
               <div style={{ margin: '0.5em 0' }} key={i}>
                 <FormGroup>
-                  <Input type="text" value={directory} onChange={e => this.changeTextOption(e.target.value, name, i)} />
+                  <Input
+                    type="text"
+                    value={directory}
+                    onChange={(e) => this.changeTextOption(e.target.value, name, i)}
+                  />
                 </FormGroup>
               </div>
             ))}
@@ -281,8 +287,8 @@ export class Injector extends React.Component<InjectorProps, InjectorState> {
                   <Label check>
                     <Input
                       type="checkbox"
-                      checked={file.entries.filter(m => m.active).length > 0}
-                      onChange={e => this.changeBooleanOption(e.target.checked, name, i)}
+                      checked={file.entries.filter((m) => m.active).length > 0}
+                      onChange={(e) => this.changeBooleanOption(e.target.checked, name, i)}
                     />{' '}
                     {file.basename}
                   </Label>
@@ -300,7 +306,7 @@ export class Injector extends React.Component<InjectorProps, InjectorState> {
                         <Input
                           type="checkbox"
                           checked={entry.active}
-                          onChange={e => this.changeBooleanOption(e.target.checked, name, i, j)}
+                          onChange={(e) => this.changeBooleanOption(e.target.checked, name, i, j)}
                         />{' '}
                         {entry.description}
                       </Label>
@@ -322,7 +328,7 @@ export class Injector extends React.Component<InjectorProps, InjectorState> {
                     <Input
                       type="checkbox"
                       checked={file.active}
-                      onChange={e => this.changeBooleanOption(e.target.checked, name, i)}
+                      onChange={(e) => this.changeBooleanOption(e.target.checked, name, i)}
                     />{' '}
                     {file.basename}
                   </Label>
@@ -375,7 +381,7 @@ export class Injector extends React.Component<InjectorProps, InjectorState> {
             <Badge color={active ? 'success' : 'secondary'}>{active ? 'Active' : 'Disabled'}</Badge>
             {' ' + name}
           </h4>
-          {Object.keys(options).map(name => this.renderInput(name))}
+          {Object.keys(options).map((name) => this.renderInput(name))}
           <Button color="primary" disabled={!hasChanges} onClick={this.saveChanges}>
             Save Changes
           </Button>

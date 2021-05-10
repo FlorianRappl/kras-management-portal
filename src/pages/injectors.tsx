@@ -37,7 +37,7 @@ class InjectorsView extends React.Component<InjectorsViewProps, InjectorsViewSta
 
     this.state = {
       injectors: props.data.injectors,
-      activeTab: props.injector || props.data.injectors.map(inj => inj.name)[0],
+      activeTab: props.injector || props.data.injectors.map((inj) => inj.name)[0],
     };
   }
 
@@ -52,7 +52,7 @@ class InjectorsView extends React.Component<InjectorsViewProps, InjectorsViewSta
   private saveChanges(injector: KrasInjector, options: KrasInjectorOptions) {
     const { injectors } = this.state;
     const data: { [x: string]: any } = {};
-    const optionNames = Object.keys(options).filter(name => name[0] !== '_');
+    const optionNames = Object.keys(options).filter((name) => name[0] !== '_');
 
     for (const optionName of optionNames) {
       const option = options[optionName];
@@ -76,7 +76,7 @@ class InjectorsView extends React.Component<InjectorsViewProps, InjectorsViewSta
       );
 
     this.setState({
-      injectors: injectors.map(inj =>
+      injectors: injectors.map((inj) =>
         inj !== injector
           ? inj
           : {
@@ -97,7 +97,7 @@ class InjectorsView extends React.Component<InjectorsViewProps, InjectorsViewSta
     return (
       <div>
         <Nav tabs>
-          {injectors.map(injector => (
+          {injectors.map((injector) => (
             <NavItem key={injector.name}>
               <NavLink
                 style={{ cursor: 'pointer' }}
@@ -110,7 +110,7 @@ class InjectorsView extends React.Component<InjectorsViewProps, InjectorsViewSta
           ))}
         </Nav>
         <TabContent activeTab={activeTab}>
-          {injectors.map(injector => (
+          {injectors.map((injector) => (
             <TabPane tabId={injector.name} key={injector.name}>
               <Injector
                 name={injector.name}

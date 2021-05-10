@@ -15,7 +15,7 @@ export class Feed extends React.Component<FeedProps> {
 
     try {
       this.ws = new WebSocket(url);
-      this.ws.onmessage = ev => {
+      this.ws.onmessage = (ev) => {
         const { onMessage } = this.props;
 
         if (typeof onMessage === 'function') {

@@ -34,7 +34,7 @@ class SettingsView extends React.Component<SettingsViewProps, SettingsViewState>
     this.state = {
       ws: props.data.ws,
       wsOriginal: props.data.ws,
-      injectors: props.data.injectors.map(injector => ({
+      injectors: props.data.injectors.map((injector) => ({
         ...injector,
         activeOriginal: injector.active,
       })),
@@ -72,7 +72,7 @@ class SettingsView extends React.Component<SettingsViewProps, SettingsViewState>
       url: 'settings',
       body: JSON.stringify({
         ws,
-        injectors: injectors.map(injector => ({
+        injectors: injectors.map((injector) => ({
           name: injector.name,
           active: injector.active,
         })),
@@ -82,7 +82,7 @@ class SettingsView extends React.Component<SettingsViewProps, SettingsViewState>
 
     this.setState({
       wsOriginal: ws,
-      injectors: injectors.map(injector => ({
+      injectors: injectors.map((injector) => ({
         ...injector,
         activeOriginal: injector.active,
       })),
@@ -96,7 +96,7 @@ class SettingsView extends React.Component<SettingsViewProps, SettingsViewState>
 
   render() {
     const { ws, wsOriginal, injectors } = this.state;
-    const hasChanges = ws !== wsOriginal || injectors.filter(inj => inj.active !== inj.activeOriginal).length > 0;
+    const hasChanges = ws !== wsOriginal || injectors.filter((inj) => inj.active !== inj.activeOriginal).length > 0;
 
     return (
       <div>

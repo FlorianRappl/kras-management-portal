@@ -32,7 +32,7 @@ export function setMiddleware(fn: (req: RequestInit) => void) {
 
 export function setAuthToken(value: string) {
   token = value;
-  setMiddleware(opts => {
+  setMiddleware((opts) => {
     const headers = opts.headers || {};
     opts.headers = {
       ...headers,
@@ -50,5 +50,5 @@ export function request({ url, body, method = 'GET', query, response = false }: 
     middleware(opts);
   }
 
-  return fetch(address, opts).then(res => (isAuth(res) ? expectResponse && res.json() : Promise.reject('auth')));
+  return fetch(address, opts).then((res) => (isAuth(res) ? expectResponse && res.json() : Promise.reject('auth')));
 }
